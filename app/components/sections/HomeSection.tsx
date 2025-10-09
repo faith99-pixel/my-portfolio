@@ -3,33 +3,40 @@ import React, { useState, useEffect } from 'react'
 
 const HomeSection = () => {
   const [displayText, setDisplayText] = useState('')
-  const fullText = 'I am a Frontend Engineer'
+  const [currentTextIndex, setCurrentTextIndex] = useState(0)
+  const texts = [
+    'I am a Frontend Engineer',
+    'I BUILD USER-CENTRIC WEBSITES',
+    'LET\'S CREATE A UNIQUE DIGITAL EXPERIENCE'
+  ]
   
   useEffect(() => {
     let index = 0
     let isDeleting = false
+    const currentText = texts[currentTextIndex]
     
     const timer = setInterval(() => {
-      if (!isDeleting && index < fullText.length) {
-        setDisplayText(fullText.slice(0, index + 1))
+      if (!isDeleting && index < currentText.length) {
+        setDisplayText(currentText.slice(0, index + 1))
         index++
-      } else if (!isDeleting && index === fullText.length) {
+      } else if (!isDeleting && index === currentText.length) {
         setTimeout(() => { isDeleting = true }, 2000)
       } else if (isDeleting && index > 0) {
-        setDisplayText(fullText.slice(0, index - 1))
+        setDisplayText(currentText.slice(0, index - 1))
         index--
       } else if (isDeleting && index === 0) {
         isDeleting = false
+        setCurrentTextIndex((prev) => (prev + 1) % texts.length)
       }
     }, isDeleting ? 50 : 100)
     
     return () => clearInterval(timer)
-  }, [])
+  }, [currentTextIndex])
 
   return (
     <section 
       className="min-h-screen relative bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/zee.jpg')" }}
+      style={{ backgroundImage: "url('/images/zoe.jpeg')" }}
     >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>

@@ -58,11 +58,11 @@ const Sidebar = () => {
       <div className="text-center mb-8">
         <div className="mb-4">
           <Image
-            src="/images/zee.jpg"
+            src="/images/zoe.jpeg"
             alt="Zoe Zebedee"
             width={120}
             height={120}
-            className="rounded-full border-4 border-gray-700 mx-auto"
+            className="!rounded-full border-4 border-gray-700 mx-auto"
           />
         </div>
         <h2 className="text-xl font-semibold">Zoe Zebedee</h2>

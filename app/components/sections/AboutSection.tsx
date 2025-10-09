@@ -15,7 +15,7 @@ const AboutSection = () => {
         <div className="md:flex md:items-stretch md:gap-12">
           <div className="hidden md:block md:w-1/3">
             <Image
-              src="/images/zoe.jpg"
+              src="/images/zoe.jpeg"
               alt="Zoe Zebedee"
               width={400}
               height={500}
