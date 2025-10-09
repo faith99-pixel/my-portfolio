@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 const AboutSection = () => {
   return (
-    <section id="about" className="min-h-screen bg-white py-10 md:py-20 px-4 md:px-8">
+    <section id="about" className="min-h-screen bg-white pb-10 md:pb-14 md:pt-14 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="md:text-4xl text-2xl font-bold text-gray-900 relative inline-block">
             About Me
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-blue-500 animate-pulse w-16"></span>
+            <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-blue-500 animate-pulse w-16"></span>
           </h2>
         </div>
 

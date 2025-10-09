@@ -20,7 +20,7 @@ const ProjectsSection = () => {
         <div className="text-center mb-16">
           <h2 className="md:text-4xl text-2xl font-bold text-gray-900 relative inline-block">
             My Projects
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-blue-500 animate-pulse w-16"></span>
+            <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-blue-500 animate-pulse w-16"></span>
           </h2>
           <p className="text-gray-600 mt-4 text-lg">A showcase of websites I've built and contributed to</p>
         </div>

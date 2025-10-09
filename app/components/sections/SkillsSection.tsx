@@ -20,16 +20,16 @@ const SkillsSection = () => {
   ]
 
   return (
-    <section id="skills" className="min-h-screen bg-gray-50 md:py-20 py-0 px-4 md:px-8">
+    <section id="skills" className="min-h-screen px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="md:text-4xl text-2xl font-bold text-gray-900 mb-8 text-center relative inline-block w-full">
           <span className="relative">
-            Key Skills & Tools
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-blue-500 animate-pulse w-32"></span>
+            Key Skills & Tools 
+            <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-blue-500 animate-pulse w-32"></span>
           </span>
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 my-16 mb-16">
           {skillCategories.map((category, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
               <div className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center mb-4`}>
