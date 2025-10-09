@@ -35,7 +35,7 @@ const HomeSection = () => {
 
   return (
     <section 
-      className="min-h-screen relative bg-cover bg-center bg-no-repeat"
+      className="min-h-screen relative bg-cover bg-no-repeat bg-top md:bg-top"
       style={{ backgroundImage: "url('/images/zoe.jpeg')" }}
     >
       {/* Background Overlay */}
