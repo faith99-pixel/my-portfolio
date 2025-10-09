@@ -1,26 +1,14 @@
 import React from 'react'
 
 const SkillsSection = () => {
-  const skillCategories = [
-    {
-      title: "Languages & Frameworks",
-      skills: ["JavaScript", "TypeScript", "React", "Next.js", "Angular", "HTML", "CSS/SCSS"],
-      color: "bg-blue-500"
-    },
-    {
-      title: "Styling",
-      skills: ["Tailwind CSS", "Responsive Design", "UI/UX best practices"],
-      color: "bg-green-500"
-    },
-    {
-      title: "Other Skills",
-      skills: ["API integration", "State management", "Version control (Git)", "Performance optimization"],
-      color: "bg-purple-500"
-    }
+  const skills = [
+    "JavaScript", "TypeScript", "React", "Next.js", "Angular", "HTML", "CSS/SCSS",
+    "Tailwind CSS", "Responsive Design", "UI/UX Design", "API Integration", 
+    "State Management", "Git", "Performance Optimization", "Node.js", "MongoDB"
   ]
 
   return (
-    <section id="skills" className="min-h-screen bg-gray-50 py-20 px-4 md:px-8">
+    <section id="skills" className="min-h-screen bg-gray-50 pt-16 pb-24 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="md:text-4xl text-2xl font-bold text-gray-900 mb-8 text-center relative inline-block w-full">
           <span className="relative">
@@ -29,27 +17,32 @@ const SkillsSection = () => {
           </span>
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8 my-16 mb-16">
-          {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-              <div className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center mb-4`}>
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <span 
-                    key={skillIndex}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors duration-200"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+        <div className="bg-white/60 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-16 border border-white/20">
+          <div className="text-center mb-8">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
             </div>
-          ))}
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">Skills</h3>
+            <p className="text-gray-600">Technologies and tools I work with</p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-3">
+            {skills.map((skill, index) => (
+              <span 
+                key={index}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg ${
+                  index % 4 === 0 ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white' :
+                  index % 4 === 1 ? 'bg-gradient-to-r from-green-500 to-green-600 text-white' :
+                  index % 4 === 2 ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white' :
+                  'bg-gradient-to-r from-orange-500 to-orange-600 text-white'
+                }`}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Mission Section */}
