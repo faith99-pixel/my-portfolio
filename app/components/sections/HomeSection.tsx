@@ -6,8 +6,8 @@ const HomeSection = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
   const texts = [
     'I am a Frontend Engineer',
-    'I BUILD USER-CENTRIC WEBSITES',
-    'LET\'S CREATE A UNIQUE DIGITAL EXPERIENCE'
+    'I build user-centric websites',
+    'Let\'s create a unique digital experience'
   ]
   
   useEffect(() => {

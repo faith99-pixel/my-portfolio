@@ -11,7 +11,6 @@ const AboutSection = () => {
             <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-blue-500 animate-pulse w-16"></span>
           </h2>
         </div>
-
         <div className="md:flex md:items-stretch md:gap-12">
           <div className="hidden md:block md:w-1/3">
             <Image
