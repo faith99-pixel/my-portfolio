@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const AboutSection = () => {
   return (
-    <section id="about" className="min-h-screen bg-white pb-0 md:pb-14 pt-16 px-4 md:px-8">
+    <section id="about" className="min-h-screen bg-white py-20 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="md:text-4xl text-2xl font-bold text-gray-900 relative inline-block">
@@ -24,7 +24,7 @@ const AboutSection = () => {
 
           <div className="md:w-2/3 text-gray-700 text-lg leading-relaxed space-y-6 md:flex md:flex-col md:justify-center">
             <p>
-              Hi, I'm Zebedee Zoe, a passionate Frontend Developer dedicated to crafting clean, responsive,
+              Hi, I'm Zoe, a passionate Frontend Developer dedicated to crafting clean, responsive,
               and user-friendly web applications. I specialize in modern technologies like React, Next.js,
               Tailwind CSS, and Angular, building interfaces that are both visually appealing and highly functional.
             </p>
