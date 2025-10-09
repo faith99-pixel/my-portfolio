@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const AboutSection = () => {
   return (
-    <section id="about" className="min-h-screen bg-white py-20 px-4 md:px-8">
+    <section id="about" className="min-h-screen bg-white py-10 md:py-20 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="md:text-4xl text-2xl font-bold text-gray-900 relative inline-block">
