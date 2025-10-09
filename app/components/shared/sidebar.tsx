@@ -14,7 +14,7 @@ const Sidebar = () => {
   }
 
   const confirmDownload = () => {
-    window.open('https://docs.google.com/document/d/1IIK01NzHlcYs_A0pOCLTqkGgLIhvvxlHdQnr_7ba3vg/edit?usp=sharing', '_blank')
+    window.open('https://docs.google.com/document/d/1AoC2qoI89LsokwqNWqqlcFLS8jULwqOr/edit?usp=sharing&ouid=114785529782089240928&rtpof=true&sd=true', '_blank')
     setShowResumeModal(false)
   }
 
