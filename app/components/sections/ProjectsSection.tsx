@@ -27,7 +27,12 @@ const ProjectsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+            <div key={index} className={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border-t-4 ${
+              index % 4 === 0 ? 'border-blue-500 hover:border-blue-600' :
+              index % 4 === 1 ? 'border-green-500 hover:border-green-600' :
+              index % 4 === 2 ? 'border-purple-500 hover:border-purple-600' :
+              'border-orange-500 hover:border-orange-600'
+            }`}>
               <div className="h-48 relative overflow-hidden">
                 <img 
                   src={project.image} 
@@ -37,15 +42,20 @@ const ProjectsSection = () => {
                     e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yMDAgMTUwTDE3NSAxMjVIMjI1TDIwMCAxNTBaIiBmaWxsPSIjOUI5QkEzIi8+CjxwYXRoIGQ9Ik0yMDAgMTUwTDE3NSAxNzVIMjI1TDIwMCAxNTBaIiBmaWxsPSIjOUI5QkEzIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOUI5QkEzIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPldlYnNpdGUgUHJldmlldyBVbmF2YWlsYWJsZTwvdGV4dD4KPC9zdmc+'
                   }}
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-70 group-hover:bg-opacity-50 transition-all duration-300"></div>
                 <div className="absolute top-4 left-4">
-                  <h3 className="font-semibold text-lg text-white drop-shadow-lg">{project.name}</h3>
+                  <h3 className="font-bold text-xl text-white drop-shadow-2xl">{project.name}</h3>
                 </div>
               </div>
               
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
+                  <span className={`px-3 py-1 text-sm rounded-full font-medium ${
+                    index % 4 === 0 ? 'bg-blue-100 text-blue-800' :
+                    index % 4 === 1 ? 'bg-green-100 text-green-800' :
+                    index % 4 === 2 ? 'bg-purple-100 text-purple-800' :
+                    'bg-orange-100 text-orange-800'
+                  }`}>
                     {project.category}
                   </span>
                   <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,7 +67,7 @@ const ProjectsSection = () => {
                   href={project.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block w-full bg-gray-800 hover:bg-gray-900 text-white text-center py-2 rounded-lg transition-colors duration-200"
+                  className="block w-full bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black text-white text-center py-3 rounded-full transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   Visit Website
                 </a>
