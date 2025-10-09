@@ -20,7 +20,7 @@ const SkillsSection = () => {
   ]
 
   return (
-    <section id="skills" className="min-h-screen px-4 md:px-8">
+    <section id="skills" className=" pb-4 md:pb-16 md:pt-14 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="md:text-4xl text-2xl font-bold text-gray-900 mb-8 text-center relative inline-block w-full">
           <span className="relative">
