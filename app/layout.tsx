@@ -6,6 +6,11 @@ import Layout from "./components/Layout";
 export const metadata: Metadata = {
     title: "Zoe Zebedee | Frontend Engineer",
     description: "Portfolio of Zoe Zebedee, frontend engineer building responsive, accessible web experiences.",
+    icons: {
+        icon: "/favicon.svg",
+        shortcut: "/favicon.svg",
+        apple: "/favicon.svg",
+    },
 };
 
 const PlusJakartaSansFont = Plus_Jakarta_Sans({
