@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import Layout from "./components/Layout";
 export const metadata: Metadata = {
-    title: "Zoe's Portfolio",
-    description: "We provide end-to-end property services across the UK to help you build long-term value.",
+    title: "Zoe Zebedee | Frontend Engineer",
+    description: "Portfolio of Zoe Zebedee, frontend engineer building responsive, accessible web experiences.",
 };
 
-const Plus_Jakarta_Sans_Font = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const PlusJakartaSansFont = Plus_Jakarta_Sans({
+    subsets: ["latin"],
+    variable: "--font-body",
+});
+
+const SpaceGroteskFont = Space_Grotesk({
+    subsets: ["latin"],
+    variable: "--font-display",
+});
 
 export default function RootLayout({
     children,
@@ -18,7 +26,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
 
-            <body suppressHydrationWarning className={Plus_Jakarta_Sans_Font.className}>
+            <body suppressHydrationWarning className={`${PlusJakartaSansFont.variable} ${SpaceGroteskFont.variable} ${PlusJakartaSansFont.className}`}>
                 <NextTopLoader
                     color="#0599B3"
                     initialPosition={0.08}

@@ -3,15 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --canvas: #f4efe6;
+  --ink: #151515;
+  --paper: #fbf8f2;
+  --brand: #0d6e6e;
+  --brand-strong: #094f4f;
+  --muted: #5f5c57;
+  --line: rgba(21, 21, 21, 0.12);
 }
 
 html {
@@ -19,7 +17,98 @@ html {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.bg-canvas {
+  background-color: var(--canvas);
+}
+
+.text-ink {
+  color: var(--ink);
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-5 py-20 md:px-8 md:py-24;
+}
+
+.section-tag {
+  @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em];
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.section-title {
+  @apply mt-4 text-3xl font-semibold md:text-5xl;
+}
+
+.section-copy {
+  @apply mt-5 max-w-2xl text-base leading-relaxed md:text-lg;
+  color: var(--muted);
+}
+
+.card-paper {
+  @apply rounded-2xl border shadow-sm;
+  background: var(--paper);
+  border-color: var(--line);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.ambient {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(64px);
+  opacity: 0.28;
+  animation: float 12s ease-in-out infinite;
+}
+
+.ambient-a {
+  width: 26rem;
+  height: 26rem;
+  background: #ebb06f;
+  top: -8rem;
+  right: -5rem;
+}
+
+.ambient-b {
+  width: 30rem;
+  height: 30rem;
+  background: #7cbec2;
+  bottom: -12rem;
+  left: -7rem;
+  animation-delay: 1.2s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient {
+    animation: none;
+  }
 }

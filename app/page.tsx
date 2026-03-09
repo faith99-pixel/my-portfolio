@@ -7,9 +7,13 @@ import ContactSection from './components/sections/ContactSection'
 
 export default function Home() {
   return (
-    <div className="flex bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen">
+    <div className="relative min-h-screen overflow-x-clip bg-canvas text-ink">
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="ambient ambient-a" />
+        <div className="ambient ambient-b" />
+      </div>
       <Sidebar />
-      <main className="flex-1 md:ml-64">
+      <main className="flex-1 pt-20">
         <HomeSection />
         <AboutSection />
         <SkillsSection />
