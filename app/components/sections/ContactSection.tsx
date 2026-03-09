@@ -10,6 +10,7 @@ const ContactSection = () => {
   const [errors, setErrors] = useState<{[key: string]: string}>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState('')
+  const [submitError, setSubmitError] = useState('')
 
   const validateForm = () => {
     const newErrors: {[key: string]: string} = {}
@@ -47,6 +48,7 @@ const ContactSection = () => {
     
     setIsSubmitting(true)
     setSubmitStatus('')
+    setSubmitError('')
     
     try {
       const response = await fetch('/api/contact', {
@@ -57,14 +59,18 @@ const ContactSection = () => {
         body: JSON.stringify(formData),
       })
       
+      const data = await response.json()
+
       if (response.ok) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', message: '' })
       } else {
         setSubmitStatus('error')
+        setSubmitError(data?.detail || data?.error || 'Failed to send message.')
       }
     } catch (error) {
       setSubmitStatus('error')
+      setSubmitError('Network error. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -178,7 +184,7 @@ const ContactSection = () => {
               
               {submitStatus === 'error' && (
                 <div className="rounded-lg bg-red-600 p-3 text-white">
-                  Failed to send message. Please try again or email me directly.
+                  {submitError || 'Failed to send message. Please try again or email me directly.'}
                 </div>
               )}
               
